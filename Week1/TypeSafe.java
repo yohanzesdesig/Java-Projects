@@ -7,7 +7,6 @@ public class TypeSafe {
     public static void main(String[] var0) {
         int  amount = 18;
         double price = 6.7, TC = amount*price;
-        /*Since we will use an int and double we should use a double for the Total Cost*/
         String Name = "Walmart", Product = "Canned Goods";
 
         System.out.println("====================================");
