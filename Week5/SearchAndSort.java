@@ -26,7 +26,7 @@ public class SearchAndSort {
         }
 
         /*Sorting a copy changes the variable so by sorting a copy the array variables per
-        number will be different*/
+        number will be different which will change what variable will be searched*/
         Arrays.sort(sortedSc);
         System.out.println("Original array: " + Arrays.toString(Sc));
         System.out.println("Sorted array: " + Arrays.toString(sortedSc));
