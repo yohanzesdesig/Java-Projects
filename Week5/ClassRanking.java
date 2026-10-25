@@ -5,7 +5,8 @@ package Week5;
 
 public class ClassRanking {
     public static void main(String[] args) {
-        String[] names = {"Yohan", "Mia", "Alex", "Noah", "Lia", "Sam"};
+        String[] names = {"Yohan", "Elgave", "Jheric", "Sven", "Carl", "Mike"};
+        /*The hypothetical quiz I made is up to 15 points */
         int[][] rawQuizData = {
             {15, 12, 10, 12, 13},
             {14, 15, 13, 14, 15},
@@ -23,8 +24,9 @@ public class ClassRanking {
         sortByAverage(students);
         printLeaderboard(students);
 
-        String searchName = "Yohan";
+        String searchName = "Sven";
         int rank = findStudentRank(students, searchName);
+        /*This checks if the student scores was even in the rank */
         if (rank != -1) {
             System.out.println(searchName + "'s rank: " + rank);
         } else {
@@ -59,7 +61,7 @@ public class ClassRanking {
             previousAverage = average;
         }
     }
-    /*this function is alinear search but in a more expanded manner*/
+    /*this function is a linear search but in a more expanded manner*/
     private static int findStudentRank(Student[] students, String name) {
         int rank = 0;
         double previousAverage = Double.NaN;
