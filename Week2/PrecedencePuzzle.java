@@ -22,6 +22,6 @@ public class PrecedencePuzzle {
         boolean expression3 = (++x - y >= 4) && (y++ == 2);
         System.out.println("Expression 3: (++x - y >= 4) && (y++ == 2) -> "
                 + expression3 + " (x = " + x + ", y = " + y + ")");
-        /*I didnt remember that ++ changes the x directly so it would be 6*/
+        /*I didnt remember that ++ changes the x directly so it would be 6 >= 4*/
     }
 }
