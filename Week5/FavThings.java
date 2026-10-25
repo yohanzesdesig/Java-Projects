@@ -1,3 +1,6 @@
+/*
+    @Author : Yohanze Obmerga
+*/
 package Week5;
 
 public class FavThings {
@@ -9,7 +12,7 @@ public class FavThings {
             System.out.println("My #" + (i + 1) + " favorite thing is: " + favThings[i]);
             
             }
-
+        /*This shows the amount of variables in the array*/
         System.out.println("Total # of Favorites: " + favThings.length);
     }
 }
