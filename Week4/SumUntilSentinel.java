@@ -1,3 +1,6 @@
+/*
+    @Author : Yohanze Obmerga
+*/
 package Week4;
 import java.util.Scanner;
 
