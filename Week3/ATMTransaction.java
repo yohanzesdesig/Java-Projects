@@ -1,3 +1,6 @@
+/*
+    @Author : Yohanze Obmerga
+*/
 package Week3;
 
 public class ATMTransaction {
@@ -30,10 +33,42 @@ public class ATMTransaction {
                 Wl = 0;
             }
 
-            if (Wl > 0 && AB >= W && W <= Wl) {
-                System.out.println("Withdrawal: Approved");
+            double feePercentage;
+            switch (AT) {
+                case "BRONZE":
+                    feePercentage = 2.0;
+                    break;
+                case "SILVER":
+                    feePercentage = 1.5;
+                    break;
+                case "GOLD":
+                    feePercentage = 1.0;
+                    break;
+                case "PLATINUM":
+                    feePercentage = 0.5;
+                    break;
+                default:
+                    feePercentage = -1;
+                    break;
+            }
+
+            if (feePercentage < 0) {
+                System.out.println("Withdrawal: Denied - the account tier is invalid, so no transaction fee can be determined.");
+            } else if (W <= 0) {
+                System.out.println("Withdrawal: Denied - the withdrawal amount must be greater than zero.");
+            } else if (W > Wl) {
+                System.out.println("Withdrawal: Denied - the withdrawal amount exceeds the daily limit for the " + AT + " tier of " + Wl + ".");
             } else {
-                System.out.println("Withdrawal: Denied");
+                double fee = W * feePercentage / 100;
+                double total = W + fee;
+                if (AB >= total) {
+                    AB -= total;
+                    System.out.println("Withdrawal: Approved");
+                    System.out.println("Transaction fee (" + feePercentage + "%): " + fee);
+                    System.out.println("Total amount deducted: " + total);
+                } else {
+                    System.out.println("Withdrawal: Denied - the balance of " + AB + " is insufficient to cover the withdrawal and fee totaling " + total + ".");
+                }
             }
         } else {
             System.out.println("Checking Account Security: Denied");
